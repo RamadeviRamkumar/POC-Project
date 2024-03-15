@@ -18,7 +18,7 @@ const handleBack = () => {
   const getAPI = async () => {
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer aGBZSWnB7EtmRTWr4ciytYzsrMRi'
+      'Authorization': 'Bearer XTbKvsUDPBMTAAZBEGMVU0S7mjwd'
     }
     try {
       const response = await axios.get(endPoint, {

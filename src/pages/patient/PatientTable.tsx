@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Table } from "reactstrap";
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const table = () => {
   const endPoint: string =
@@ -12,7 +12,7 @@ const table = () => {
   const getAPI = async () => {
     const headers = {
       "Content-Type": "application/json",
-      Authorization: "Bearer aGBZSWnB7EtmRTWr4ciytYzsrMRi",
+      Authorization: "Bearer XTbKvsUDPBMTAAZBEGMVU0S7mjwd",
     };
     try {
       const response = await axios.get(endPoint, {
@@ -41,7 +41,7 @@ const table = () => {
               navigate("/patient-form");
             }}
           >
-           <i className="bi bi-plus"></i> Add New Patient 
+            <i className="bi bi-plus"></i> Add New Patient
           </button>
         </div>
       </div>
@@ -50,12 +50,12 @@ const table = () => {
         <thead className="table-secondary">
           <tr>
             <th className="text-center"> S.No </th>
-            <th className="text-center"> First Name </th>
-            <th className="text-center">Last Name</th>
-            <th className="text-center">DOB</th>
-            <th className="text-center">Department</th>
+            <th className="text-center">PatientName</th>
+            <th className="text-center">PracticeId</th>
+            <th className="text-center">PatientId</th>
+            <th className="text-center">DepartmentId</th>
             <th className="text-center">Email</th>
-            <th className="text-center">Gurantor Email</th>
+
             <th className="text-center">SSN</th>
             <th className="text-center">Mobile Phone</th>
             <th className="text-center">Zip Code</th>
@@ -67,29 +67,39 @@ const table = () => {
             apiData?.map((item: any, index: number) => {
               return (
                 <tr>
-                  <th scope="row" className="text-center">{index + 1}</th>
-                  <td className="text-center">{item.firstname ?? "-"}</td>
-                  <td className="text-center">{item.lastname ?? "-"}</td>
-                  <td className="text-center">{item.dob ?? "-"}</td>
-                  <td className="text-center">{item.Department ?? "-"}</td>
+                  <th scope="row" className="text-center">
+                    {index + 1}
+                  </th>
+                  <td className="text-center">{item.PracticeId ?? "-"}</td>
+                  <td className="text-center">{item.PatientId ?? "-"}</td>
+                  <td className="text-center">{item.DepartmentId ?? "-"}</td>
+                  <td className="text-center">{item.PatientName ?? "-"}</td>
                   <td className="text-center">{item.Email ?? "-"}</td>
-                  <td className="text-center">{item.GurantorEmail ?? "-"}</td>
+
                   <td className="text-center">{item.SSN ?? "-"}</td>
                   <td className="text-center">{item.MobilePhone ?? "-"}</td>
                   <td className="text-center">{item.ZipCode ?? "-"}</td>
                   <td>
                     <div className="d-flex gap-2">
-                      <button className="btn btn-primary"
-                      onClick={() => {
-                        navigate(`/patient-form/${item.patientid}`);
-                      }}
-                      ><i className="bi bi-pencil-square "></i></button>
-                      <button className="btn btn-danger"><i className="bi bi-trash3-fill "></i></button>
-                      <button className="btn btn-success"
-                      onClick={() => {
-                        navigate(`/patient-chart/${item.patientid}`);
-                      }}
-                      ><i className="bi bi-folder-plus"></i></button>
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => {
+                          navigate(`/patient-form/${item.patientid}`);
+                        }}
+                      >
+                        <i className="bi bi-pencil-square "></i>
+                      </button>
+                      <button className="btn btn-danger">
+                        <i className="bi bi-trash3-fill "></i>
+                      </button>
+                      <button
+                        className="btn btn-success"
+                        onClick={() => {
+                          navigate(`/patient-chart/${item.patientid}`);
+                        }}
+                      >
+                        <i className="bi bi-folder-plus"></i>
+                      </button>
                     </div>
                   </td>
                 </tr>

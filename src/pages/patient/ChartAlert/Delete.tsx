@@ -20,6 +20,7 @@ const Delete = () => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
+          Authorization: "Bearer XTbKvsUDPBMTAAZBEGMVU0S7mjwd"
         },
       }
     )

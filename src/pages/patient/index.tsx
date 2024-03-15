@@ -1,4 +1,4 @@
-// patient.js
+
 import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import "./index.css";
@@ -11,13 +11,13 @@ import {
 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-const Patient = () => {
+const patient = () => {
   const params = useParams()
   const endPoint: string = `https://api.preview.platform.athenahealth.com/v1/195900/patients/${params?.id}`
   const getAPI = async () => {
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer aGBZSWnB7EtmRTWr4ciytYzsrMRi'
+      'Authorization': 'Bearer XTbKvsUDPBMTAAZBEGMVU0S7mjwd'
     }
     try {
       const response = await axios.get(endPoint, {
@@ -63,7 +63,7 @@ const Patient = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Patient Data:", patient);
+    // console.log("Patient Data:", patient);
   };
 
   useEffect(() => {
@@ -356,4 +356,4 @@ const Patient = () => {
   );
 };
 
-export default Patient;
+export default patient;

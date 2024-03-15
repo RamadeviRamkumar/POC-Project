@@ -22,7 +22,7 @@ const Create = () => {
         method: "POST",
         headers: {
           "Content-Type": contentType,
-          Authorization: "Bearer aGBZSWnB7EtmRTWr4ciytYzsrMRi",
+          Authorization: "Bearer XTbKvsUDPBMTAAZBEGMVU0S7mjwd",
         },
 
         body: JSON.stringify({
